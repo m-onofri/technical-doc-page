@@ -3,10 +3,12 @@ let navLinks = document.querySelectorAll('a.nav-link');
 let yPositions = [];
 let ranges = [];
 
+//Find the starting y offsets of each section
 for (let i = 0; i < sections.length; i++) {
   yPositions.push(sections[i].offsetTop);
 }
 
+//Define the range of y offset of each section
 for (let i = 0; i < sections.length; i++) {
   let range = [];
   if (yPositions[i+1]) {
@@ -17,6 +19,7 @@ for (let i = 0; i < sections.length; i++) {
   ranges.push(range);
 }
 
+//Find the section index according to the scrolling position
 function findSection(position) {
   if (position >= ranges[0][0] && position <= ranges[0][1]) {
     return 0;
@@ -37,6 +40,7 @@ function findSection(position) {
   }
 };
 
+//add class .selected to a navLink and remove it from the others
 function addSelectedClass(index) {
   for (let i = 0; i < navLinks.length; i++) {
       navLinks[i].classList.remove("selected");
@@ -44,6 +48,10 @@ function addSelectedClass(index) {
   navLinks[index].classList.add("selected");
 }
 
+//Add .selected class to the first navLink when the page is loaded
+navLinks[0].classList.add("selected");
+
+//Add navigation effect based on scrolling
 window.addEventListener('scroll', function() {
   let position = window.pageYOffset;
   let index = findSection(position);
