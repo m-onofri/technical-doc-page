@@ -141,6 +141,10 @@ a.nav-link:hover, a.nav-link.selected {
   padding-bottom: 0.5rem;
 }
 
+section.main-section:last-child {
+  padding-bottom: 7rem;
+}
+
 @media (max-width: 973px) {
   #navbar {
     width: 290px;

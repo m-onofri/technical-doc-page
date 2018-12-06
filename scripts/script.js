@@ -57,8 +57,3 @@ window.addEventListener('scroll', function() {
   let index = findSection(position);
   addSelectedClass(index);
 });
-
-
-
-console.log(yPositions);
-console.log();
