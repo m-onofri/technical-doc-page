@@ -80,12 +80,20 @@ code {
 }
 
 #navbar li {
-  font-size: 1rem;
+  font-size: 0.75rem;
+}
+
+.main_title {
+  display: block;
+  padding: 1rem;
+  width: 100%;
+  background-color: #f1f1f1;
+  border-bottom: solid #ddd 2px;
 }
 
 .nav-link {
   display: block;
-  padding: 1rem;
+  padding: 0.5rem;
   width: 100%;
   background-color: #f1f1f1;
   border-bottom: solid #ddd 2px;
