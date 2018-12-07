@@ -37,8 +37,8 @@
   </nav>
   <main id="main-doc">
     <section id="Introduction" class="main-section">
-      <header>Introduction</header>
-      <article>
+      <header id='0' class='selected'>Introduction</header>
+      <article >
         <p>CSS transitions allow to control the speed on which CSS properties can change.</p>
         <p>In fact by default such variations take place instantly, while using CSS transitions these variations take pace on specific time intervals that follows an acceleration curve, that is completely customizible.</p>
         <p>CSS transitions allow you to define:</p>
@@ -51,8 +51,8 @@
       </article>
     </section>
     <section id="Transition-property" class="main-section">
-      <header class="header_top_spacing">Transition-property</header>
-      <article>
+      <header id='1'>Transition-property</header>
+      <article class="hide-article">
         <p>It allows to define the name or the names of the CSS properties on which you want to apply the transitions.</p>
         <p>It’s important to note that only certain properties can be animated using CSS transitions.</p> 
         <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties" target="_blank">On this link you can find an exhaustive list</a> of animatable CSS properties.</p>
@@ -64,8 +64,8 @@
       </article>
     </section>
     <section id="Transition-duration" class="main-section">
-      <header class="header_top_spacing">Transition-duration</header>
-      <article>
+      <header id='2'>Transition-duration</header>
+      <article class="hide-article">
         <p>It allows to specify the duration (in seconds or in milliseconds) of the transitions.
 </p>
         <p>In the case of acting on more properties, it’s possible to set a single duration for all the properties, or different durations for each property involved.</p>
@@ -78,8 +78,8 @@
       </article>
     </section>
     <section id="Transition-timing-function" class="main-section">
-      <header class="header_top_spacing">Transition-timing-function</header>
-      <article>
+      <header id='3'>Transition-timing-function</header>
+      <article class="hide-article">
         <p>It allows to define the speed curve that the transition wil follow.</p>
         <p>The transition-timing-function property can have the following values:</p>
         <ul>
@@ -100,8 +100,8 @@
       </article>
     </section>
     <section id="Transition-delay" class="main-section">
-      <header class="header_top_spacing">Transition-delay</header>
-      <article>
+      <header id='4'>Transition-delay</header>
+      <article class="hide-article">
         <p>As the name suggests, it allows defining a delay (in seconds) for the transition event.</p>
         <div class="code_container">
         <code>
@@ -112,26 +112,30 @@
       </article>
     </section>
     <section id="Transition" class="main-section">
-      <header class="header_top_spacing">Transition</header>
-      <p>The transition property is a shorthand property used to represent up to four transition-related longhand properties:</p>
-      <code>
-.box {
-  transition: background-color 800ms ease-in-out 2s;
-}
-      </code>
+      <header id='5'>Transition</header>
+      <article class="hide-article">
+        <p>The transition property is a shorthand property used to represent up to four transition-related longhand properties:</p>
+        <code>
+  .box {
+    transition: background-color 800ms ease-in-out 2s;
+  }
+        </code>
+      </article>
     </section>
     <section id="Vendor_prefixes" class="main-section">
-      <header class="header_top_spacing">Vendor Prefixes</header>
-      <p>For compatibility in all supporting browsers, vendor prefixes are required.</p>
-      <p>Note that the standard syntax is declared at last:</p>
-      <code>
-.box {
-  -webkit-transition: background-color 800ms ease-in-out 2s;
-  -moz-transition: background-color 800ms ease-in-out 2s;
-  -o-transition: background-color 800ms ease-in-out 2s;
-  transition: background-color 800ms ease-in-out 2s;
-}
-      </code>
+      <header id='6'>Vendor Prefixes</header>
+      <article class="hide-article">
+        <p>For compatibility in all supporting browsers, vendor prefixes are required.</p>
+        <p>Note that the standard syntax is declared at last:</p>
+        <code>
+  .box {
+    -webkit-transition: background-color 800ms ease-in-out 2s;
+    -moz-transition: background-color 800ms ease-in-out 2s;
+    -o-transition: background-color 800ms ease-in-out 2s;
+    transition: background-color 800ms ease-in-out 2s;
+  }
+        </code>
+      </article>
     </section>
   </main>
   <script src="scripts/script.js"></script>

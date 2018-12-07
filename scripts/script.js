@@ -1,5 +1,8 @@
 let sections = document.querySelectorAll('.main-section');
 let navLinks = document.querySelectorAll('a.nav-link');
+let mainDoc = document.querySelector('#main-doc');
+let articleHeader = document.querySelectorAll('.main-section header');
+let articles = document.querySelectorAll('article');
 let yPositions = [];
 let ranges = [];
 
@@ -12,9 +15,9 @@ for (let i = 0; i < sections.length; i++) {
 for (let i = 0; i < sections.length; i++) {
   let range = [];
   if (yPositions[i+1]) {
-    range = [yPositions[i] - 10, yPositions[i+1] - 10];
+    range = [yPositions[i] - 20, yPositions[i+1] - 20];
   } else {
-    range = [yPositions[i], yPositions[i] + 500];
+    range = [yPositions[i], yPositions[i] + 600];
   }
   ranges.push(range);
 }
@@ -41,11 +44,19 @@ function findSection(position) {
 };
 
 //add class .selected to a navLink and remove it from the others
-function addSelectedClass(index) {
-  for (let i = 0; i < navLinks.length; i++) {
-      navLinks[i].classList.remove("selected");
+function addSelectedClass(collection, index) {
+  for (let i = 0; i < collection.length; i++) {
+      collection[i].classList.remove("selected");
   }
-  navLinks[index].classList.add("selected");
+  collection[index].classList.add("selected");
+}
+
+//
+function removeHideArticle(collection, index) {
+  for (let i = 0; i < collection.length; i++) {
+    collection[i].classList.add("hide-article");
+  }
+  collection[index].classList.remove("hide-article");
 }
 
 //Add .selected class to the first navLink when the page is loaded
@@ -55,5 +66,18 @@ navLinks[0].classList.add("selected");
 window.addEventListener('scroll', function() {
   let position = window.pageYOffset;
   let index = findSection(position);
-  addSelectedClass(index);
+  addSelectedClass(navLinks, index);
 });
+
+//
+mainDoc.addEventListener('click', function(e) {
+  if (e.target.tagName == "HEADER") {
+    let targetId = e.target.id;
+    addSelectedClass(articleHeader, targetId);
+    removeHideArticle(articles, targetId);
+    //e.target.nextElementSibling.classList.toggle('hide-article');
+  }
+});
+
+
+
